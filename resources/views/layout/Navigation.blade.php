@@ -12,19 +12,19 @@
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ route("about") }}">About</a></li>
 
                 @auth
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ route("post") }}">Sample Post</a>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ route("article.Show") }}">Articles</a>
                     </li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ route("contact") }}">Contact</a>
                     </li>
                     </li class="nav-item">
-                    {{-- <a type="button" class="btn btn-outline-light navigation--button" href="{{route( "
-                        logout")}}">LogOut</a> --}}
+                   
                     <form method="POST" action="{{ route('logout') }}" class="d-inline">
                         @csrf
-                        <li class="nav-item"><button type="submit" class="nav-link px-lg-3 py-3 py-lg-4">Logout</button></li>
-                        {{-- <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a> --}}
+                        <li class="nav-item"><button type="submit" class="btn btn-success">Logout</button></li>
                        
                     </form>
+                    <li><a href="{{ url('/dashboard') }}" class="btn btn-success">Dashboard</a> </li>
+
                 @else
                    <li class="nav-item"> <a type="button" class="nav-link px-lg-3 py-3 py-lg-4" href="{{ route("login") }}">login</a></li>
                    @if (Route::has('register'))

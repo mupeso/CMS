@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ShowArticlesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,6 +47,11 @@ Route::get('/about', function () {
     return view('about');
 })->name("about");
 
+Route::get('/edit', function () {
+    return view('Articles.edit');
+})->name("edit");
+
+
 
 
 
@@ -57,9 +64,13 @@ Route::get('/dashboard', function () {
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('/post', function () {
-    return view('post');
-})->name("post");
+    Route::get('/ShowArticles',[ShowArticlesController::class,"create"])->name("article.Show");
+    Route::get('/post',[ArticleController::class,"create"])->name("post");
+    Route::post('/post/store',[ArticleController::class,"store"])->name("article.store");
+    Route::delete('/post/delete/{id}',[ArticleController::class,"destroy"])->name("article.destroy");
+
+
+
 
 
 Route::get('/contact', function () {

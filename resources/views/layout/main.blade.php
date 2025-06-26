@@ -17,3 +17,5 @@
         @yield("content")
 
         @include('layout.footar')
+
+        

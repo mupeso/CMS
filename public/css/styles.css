@@ -10796,3 +10796,36 @@ header.masthead .post-heading .meta a {
     font-size: 2.25rem;
   }
 }
+
+.middle-section .news-feeds .feed {
+  background: var(--white-color);
+  border-radius: var(--card-border-radius);
+  padding: var(--card-padding);
+  margin: 1rem 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.middle-section .feed .head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.middle-section .feed .user {
+  display: flex;
+  gap: 1rem;
+}
+
+.middle-section .feed .post-img {
+  border-radius: var(--card-border-radius);
+  overflow: hidden;
+  margin: 0.7rem 0;
+}
+
+.middle-section .feed .action-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
+  margin: 0.6rem;
+}
